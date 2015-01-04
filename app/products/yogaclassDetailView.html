@@ -1,0 +1,54 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:large">
+        {{vm.title}}
+    </div>
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-2">Name:</div>
+                    <div class="col-md-6">{{vm.yogaclass.yogaclassName}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Description:</div>
+                    <div class="col-md-6">{{vm.yogaclass.description }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Level:</div>
+                    <div class="col-md-6">{{vm.yogaclass.yogaclassLevel }}</div>
+                    <!-- TODO
+                     apply conditional class if level is Advanced,
+                     i.e. class="label label-warning"-->
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Date:</div>
+                    <div class="col-md-6">{{vm.yogaclass.yogaclassDate|date }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Time:</div>
+                    <div class="col-md-6">{{vm.yogaclass.yogaclassTime }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Price:</div>
+                    <div class="col-md-6">{{ vm.yogaclass.price|currency }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Location:</div>
+                    <div class="col-md-6">{{vm.yogaclass.location }}</div>
+                </div>
+                <div class="row">
+                    <a class="btn" href={{vm.yogaclass.locationMap}} target="_blank"><span class='glyphicon glyphicon-map-marker'></span>Map</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-default"
+           ui-sref="yogaclassList"
+           style="width:80px">
+            <I class="glyphicon glyphicon-chevron-left"></i>
+            Back
+        </a>
+    </div>
+</div>

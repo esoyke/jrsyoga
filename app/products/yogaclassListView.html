@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size:large">Class Calendar
+    </div>
+
+    <div class="panel-body">
+        <table class="table">
+
+            <thead>
+            <tr class="panel-title">
+                <td>Class</td>
+                <td>Date</td>
+                <td>Class cost</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="yogaclass in vm.yogaclasses">
+                <!--class="label label-warning"-->
+                <td>
+                    <a tooltip="{{yogaclass.description}}"
+                       ui-sref="yogaclassDetail({yogaclassId: yogaclass.yogaclassId})">
+                    {{ yogaclass.yogaclassName}} </a>
+                </td>
+
+                <td>{{ yogaclass.yogaclassDate }}&nbsp;&nbsp;&nbsp;{{ yogaclass.yogaclassTime }}</td>
+                <td>{{ (yogaclass.price | currency) || 'Love offering' }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
